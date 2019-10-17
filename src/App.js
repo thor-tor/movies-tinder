@@ -3,6 +3,7 @@ import './App.css'
 import MoviesData from "./components/MoviesData"
 import Movie from "./components/Movie"
 import axios from 'axios'
+import Newbutton from './components/Newbutton'
 
 class App extends Component{
 
@@ -65,6 +66,7 @@ class App extends Component{
 
     return (
       <div className="App">
+          <Newbutton />
             {MovieComponents[0]}
             <button className="acceptButton" onClick={this.addMovie}> Accept</button>
             <button className="rejectButton" onClick={this.removeMovie}> Reject</button>

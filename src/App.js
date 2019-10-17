@@ -4,6 +4,7 @@ import MoviesData from "./components/MoviesData"
 import Movie from "./components/Movie"
 import axios from 'axios'
 
+
 class App extends Component{
 
   constructor(){
@@ -65,6 +66,7 @@ class App extends Component{
 
     return (
       <div className="App">
+
             {MovieComponents[0]}
             <button className="acceptButton" onClick={this.addMovie}> Accept</button>
             <button className="rejectButton" onClick={this.removeMovie}> Reject</button>

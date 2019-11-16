@@ -1,4 +1,5 @@
 {"movies":[ 
+<<<<<<< HEAD
   {
     "id": "1and3011",
     "imageURL": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUzNTE2NTkzMV5BMl5BanBnXkFtZTgwMDAzOTUyMDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
@@ -57,3 +58,63 @@
   }
 ]
 }
+=======
+      {
+        "id": "1and3011",
+        "imageURL": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUzNTE2NTkzMV5BMl5BanBnXkFtZTgwMDAzOTUyMDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+        "title": "Inferno",
+        "summary": "Lorem ipsum….",
+        "rating": "5.3"
+      },
+      {
+        "id": "2301abc",
+        "imageURL": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SY1000_CR0,0,677,1000_AL_.jpg",
+        "title": "Star Wars: Episode VII - The Force Awakens",
+        "summary": "Lorem ipsum….",
+        "rating": "8.2"
+      },
+      {
+        "id": "2301abc",
+        "imageURL": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SY1000_CR0,0,677,1000_AL_.jpg",
+        "title": "Star Wars: Episode VII - The Force Awakens",
+        "summary": "Lorem ipsum….",
+        "rating": "8.2"
+      },
+      {
+        "id": "8yx0l1",
+        "imageURL": "https://m.media-amazon.com/images/M/MV5BMGUyM2ZiZmUtMWY0OC00NTQ4LThkOGUtNjY2NjkzMDJiMWMwXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SY1000_CR0,0,682,1000_AL_.jpg",
+        "title": "The Irishman",
+        "summary": "Lorem ipsum….",
+        "rating": "8.5"
+      },
+      {
+        "id": "7vi8zw",
+        "imageURL": "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,643,1000_AL_.jpg",
+        "title": "Back to the future",
+        "summary": "Lorem ipsum….",
+        "rating": "8.2"
+      },
+      {
+        "id": "9n951u",
+        "imageURL": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,671,1000_AL_.jpg",
+        "title": "Shrek",
+        "summary": "Lorem ipsum….",
+        "rating": "7.8"
+      },
+      {
+        "id": "rw0k4c",
+        "imageURL": "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_SY1000_SX675_AL_.jpg",
+        "title": "Grand Budapest Hotel",
+        "summary": "Lorem ipsum….",
+        "rating": "8.1"
+      },
+      {
+        "id": "last",
+        "imageURL": "",
+        "title": "There are no more movies",
+        "summary": "",
+        "rating": ""
+      }
+    ]
+  }
+>>>>>>> smigacz

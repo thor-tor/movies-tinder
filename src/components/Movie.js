@@ -1,51 +1,43 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios"
+import axios from 'axios';
 
 const Movie = () => {
 
-    const [moviesList, setMoviesList] = useState([])
-    const [movieTitle, setMovieTilte] = useState("Titanic")
-    const [movieImage, setMovieImage] = useState("https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SY1000_CR0,0,677,1000_AL_.jpg")
-    const [movieSummary, setMovieSummary] = useState("Lorem Ipsum")
-    const [movieRating, setMovieRating] = useState("1")
-  
-    // useEffect(() => {
-    //     fetch("http://localhost:3004/movies")
-    //     .then(response => response.json())
-    //     .then(response => {
-    //         const movies = response.data
-    //         setMoviesList(movies)
-    //         console.log(movies)
-    //     })
-    // },[])
+    // const moviesData = [...MoviesData]
+
+    const [moviesData, setMoviesData] = useState([{title: '', summary: '', imageURL: '', rating: ''}])
 
     useEffect(() => {
         axios.get('http://localhost:3004/movies')
         .then(res => {
           const movies = res.data;
-          setMoviesList(movies)
-          setMovieTilte(movies.title)
+          setMoviesData(movies)
         //   console.log(movies)
         })
     },[])
 
-    console.log(moviesList[0].title)
+    const AcceptMovie = () => {
+        // setMoviesDetails([...moviesData], moviesData.shift())
+        // console.log(moviesData)
+    }
 
-    
+    const RejectMovie = () => {
+        // setMoviesDetails([...moviesData], moviesData.shift())
+        // console.log(moviesData)
+    }
+
+    console.log(moviesData[0].title)
 
     return(
         <div className="movieContainer">
-            <h2>{movieTitle}</h2>
-            <img alt="movie poster" className="moviePoster" src={movieImage}/>
-            <p>{movieSummary}</p>
-            <p>({movieRating}/10)</p>
-
-            <button className="acceptButton"> Accept</button>
-            <button className="rejectButton"> Reject</button>
+            <h2>{moviesData[0].title}</h2>
+            <img alt="movie poster" className="moviePoster" src={moviesData[0].imageURL}/>
+            <p>{moviesData[0].summary}</p>
+            <p>({moviesData[0].rating}/10)</p>
+            <button className="acceptButton" onClick={AcceptMovie}> Accept</button>
+            <button className="rejectButton" onClick={RejectMovie}> Reject</button>
         </div>
         )
     }
-
-
 
 export default Movie

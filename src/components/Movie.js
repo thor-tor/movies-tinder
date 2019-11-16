@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {axios} from "axios"
 
 const Movie = () => {
 
@@ -15,6 +16,15 @@ const Movie = () => {
             const movies = response.data
             setMoviesList(movies)
             console.log(movies)
+        })
+    },[])
+
+    useEffect(() => {
+        axios.get('http://localhost:3004/movies')
+        .then(res => {
+          const movies = res.data;
+          setMoviesList(movies)
+        //   console.log(movies)
         })
     },[])
 

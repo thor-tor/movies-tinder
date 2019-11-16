@@ -26,7 +26,7 @@ const Movie = () => {
         // console.log(moviesData)
     }
 
-    console.log(moviesData[0].title)
+    console.log(moviesData)
 
     return(
         <div className="movieContainer">

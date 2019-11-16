@@ -9,10 +9,16 @@ const Movie = () => {
     const [movieRating, setMovieRating] = useState("1")
   
     useEffect(() => {
-
+        fetch("http://localhost:3004/movies")
+        .then(response => response.json())
+        .then(response => {
+            const movies = response.data
+            setMoviesList(movies)
+            console.log(movies)
+        })
     },[])
 
-
+    console.log(moviesList)
 
     return(
         <div className="movieContainer">

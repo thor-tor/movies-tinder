@@ -5,7 +5,7 @@ const Movie = () => {
 
     // const moviesData = [...MoviesData]
 
-    const [moviesData, setMoviesData] = useState([])
+    const [moviesData, setMoviesData] = useState([{title: '', summary: '', imageURL: '', rating: ''}])
 
     useEffect(() => {
         axios.get('http://localhost:3004/movies')
@@ -26,16 +26,14 @@ const Movie = () => {
         // console.log(moviesData)
     }
 
-    console.log(moviesData)
-    const movie = [...moviesData]
-    console.log(movie[0])
+    console.log(moviesData[0].title)
 
     return(
         <div className="movieContainer">
-<h2>{moviesData[0]['title']}</h2>
-            <img alt="movie poster" className="moviePoster" src=""/>
-            <p></p>
-            <p>(/10)</p>
+            <h2>{moviesData[0].title}</h2>
+            <img alt="movie poster" className="moviePoster" src={moviesData[0].imageURL}/>
+            <p>{moviesData[0].summary}</p>
+            <p>({moviesData[0].rating}/10)</p>
             <button className="acceptButton" onClick={AcceptMovie}> Accept</button>
             <button className="rejectButton" onClick={RejectMovie}> Reject</button>
         </div>

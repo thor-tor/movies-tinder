@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {axios} from "axios"
+import axios from "axios"
 
 const Movie = () => {
 
@@ -9,26 +9,29 @@ const Movie = () => {
     const [movieSummary, setMovieSummary] = useState("Lorem Ipsum")
     const [movieRating, setMovieRating] = useState("1")
   
-    useEffect(() => {
-        fetch("http://localhost:3004/movies")
-        .then(response => response.json())
-        .then(response => {
-            const movies = response.data
-            setMoviesList(movies)
-            console.log(movies)
-        })
-    },[])
+    // useEffect(() => {
+    //     fetch("http://localhost:3004/movies")
+    //     .then(response => response.json())
+    //     .then(response => {
+    //         const movies = response.data
+    //         setMoviesList(movies)
+    //         console.log(movies)
+    //     })
+    // },[])
 
     useEffect(() => {
         axios.get('http://localhost:3004/movies')
         .then(res => {
           const movies = res.data;
           setMoviesList(movies)
+          setMovieTilte(movies.title)
         //   console.log(movies)
         })
     },[])
 
-    console.log(moviesList)
+    console.log(moviesList[0].title)
+
+    
 
     return(
         <div className="movieContainer">

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import {createStore} from 'redux';
-import {composeWithDevTools} from 'redux-devtools-extension'
+
 
 const store = createStore(moviesStore);
 window.store = store;

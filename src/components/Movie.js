@@ -1,11 +1,31 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
+import {createStore} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension'
+
+const store = createStore(moviesStore);
+window.store = store;
+
+const movieList = {
+    movies: []
+}
+ 
+function moviesStore(state = movieList, action) {
+     switch (action.type) {
+         case 'ACCEPT':
+             return{...state, movies: [...state.movies.shift()]}
+         case 'RESET':
+             return {...state, movies:[]}
+         default:
+             return state
+     }
+ }
 
 const Movie = () => {
 
     // const moviesData = [...MoviesData]
 
-    const [moviesData, setMoviesData] = useState([{title: '', summary: '', imageURL: '', rating: ''}])
+    const [moviesData, setMoviesData] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:3004/movies')
@@ -15,6 +35,11 @@ const Movie = () => {
         //   console.log(movies)
         })
     },[])
+
+    console.log(moviesData)
+
+
+    
 
     const AcceptMovie = () => {
         // setMoviesDetails([...moviesData], moviesData.shift())

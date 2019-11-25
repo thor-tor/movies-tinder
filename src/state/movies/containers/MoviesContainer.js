@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllMovies } from '../duck/operations.js'
+import Movie from '../../../components/Movie'
 
 const MoviesContainer = (props) => {
   const movies = useSelector(state => state)
@@ -12,8 +13,12 @@ const MoviesContainer = (props) => {
 
   console.log(movies)
 
+  const movie = movies.list.map(movie => <Movie key={movie.id} movie={movie}/>)
+
   return (
-      <div>{movies.list[0]}</div>
+     <div>{movie[0]}</div> 
+    
+      
     )
 }
 

@@ -12,10 +12,14 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
         return produce(state, draftState => {
           draftState.list.push(action.item)
         })
-    case types.RESET_MOVIES:
+    case types.ACCEPT_MOVIE:
         return produce(state, draftState => {
-          draftState.list = []
+          draftState.list.shift(action.item)
         })
+    case types.REJECT_MOVIE:
+        return produce(state, draftState => {
+          draftState.list.shift(action.item)
+        })   
     default:
       return state
   }

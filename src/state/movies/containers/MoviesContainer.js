@@ -11,14 +11,14 @@ const MoviesContainer = (props) => {
     dispatch(getAllMovies())
   },[dispatch])
 
-  console.log(movies)
-
   const movie = movies.list.map(movie => <Movie key={movie.id} movie={movie}/>)
 
   return (
+    <div>
      <div>{movie[0]}</div> 
-    
-      
+     <button className="acceptButton" onClick={() => dispatch({ type: 'ACCEPT_MOVIE' })}> Accept</button>
+     <button className="rejectButton" onClick={() => dispatch({ type: 'REJECT_MOVIE' })}> Reject</button>
+     </div>
     )
 }
 

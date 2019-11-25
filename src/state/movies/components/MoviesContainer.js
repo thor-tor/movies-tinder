@@ -10,9 +10,11 @@ const MoviesContainer = (props) => {
     dispatch(getAllMovies())
   },[dispatch])
 
-  return <ul>
-    {movies.list.map(movie => <li>{movie}</li>)}
-  </ul>
+  console.log(movies)
+
+  return (
+      <div>{movies.list[0]}</div>
+    )
 }
 
 export default MoviesContainer

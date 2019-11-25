@@ -9,6 +9,6 @@ const fetchMovies = async () => {
 
 export const getAllMovies = () => async (dispatch) => {
     const movies = await fetchMovies()
-    movies.map(movie => dispatch(actions.add(movie.title)))
+    movies.map(movie => dispatch(actions.add({title: movie.title, poster: movie.imageURL, rating: movie.rating, summary: movie.summary, key:movie.id})))
   }
 

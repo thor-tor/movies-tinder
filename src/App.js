@@ -1,15 +1,14 @@
 import React from 'react'
 import './App.css'
-import Movie from "./components/Movie"
+import MoviesContainer from './state/movies/containers/MoviesContainer'
 
-const App = () => {
 
-  return (
-    <>
-            <Movie />
-    </>
-
-    )
+const App = () =>{
+    return (
+      <div>
+        <MoviesContainer />
+      </div>
+    );
   }
 
-export default App;
+export default App

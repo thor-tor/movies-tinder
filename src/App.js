@@ -1,54 +1,19 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './App.css'
-import MoviesData from "./components/MoviesData"
 import Movie from "./components/Movie"
+<<<<<<< HEAD
 import axios from 'axios'
+=======
+>>>>>>> develop
 
-class App extends Component{
+const App = () => {
 
-  constructor(){
-    super()
-    this.state = {
-      movies: MoviesData
-    }
-    this.addMovie = this.addMovie.bind(this)
-    this.removeMovie = this.removeMovie.bind(this)
-  }
-  
-  async componentDidMount() {
-    await axios.get('./components/MoviesData.js')
-    this.setState({movies: MoviesData})
-  }
+  return (
+    <>
+            <Movie />
+    </>
 
-  async addMovie(){
-
-    if(this.state.movies.length === 1){
-      return
-    }
-    
-    axios.put(`/recommendations/${this.state.movies[0].id}/accept`,{
-    })
-    .then(res => { console.log(res.data)})
-
-
-    this.setState((prevState) => ({
-      movies: prevState.movies.slice(1)
-    }))
-    console.log(this.state.movies)
-  }
-  
-      
-  removeMovie(){
-
-    if(this.state.movies.length === 1){
-      return
-    }
-
-    this.setState((prevState) => ({
-      movies: prevState.movies.slice(1)
-    }));
-    axios.put(`/recommendations/${this.state.movies[0].id}/reject`,{
-
+<<<<<<< HEAD
     })
     .then(res => { console.log(res.data)})
     console.log(this.state.movies)
@@ -69,9 +34,9 @@ class App extends Component{
             <button className="acceptButton" onClick={this.addMovie}> Accept</button>
             <button className="rejectButton" onClick={this.removeMovie}> Reject</button>
       </div>
+=======
+>>>>>>> develop
     )
   }
-}  
-
 
 export default App;

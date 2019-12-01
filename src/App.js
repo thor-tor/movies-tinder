@@ -1,13 +1,17 @@
 import React from 'react'
 import './App.css'
+<<<<<<< HEAD
 import Movie from "./components/Movie"
 <<<<<<< HEAD
 import axios from 'axios'
 =======
 >>>>>>> develop
+=======
+import MoviesContainer from './state/movies/containers/MoviesContainer'
+>>>>>>> feature/docker_implementation
 
-const App = () => {
 
+<<<<<<< HEAD
   return (
     <>
             <Movie />
@@ -37,6 +41,14 @@ const App = () => {
 =======
 >>>>>>> develop
     )
+=======
+const App = () =>{
+    return (
+      <div>
+        <MoviesContainer />
+      </div>
+    );
+>>>>>>> feature/docker_implementation
   }
 
-export default App;
+export default App

@@ -8,6 +8,7 @@ body {
 }
 
 .moviePoster{
+  max-height: 547px;
   height: auto;
   width: 17%;
   border-radius:15px;

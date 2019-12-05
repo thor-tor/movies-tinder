@@ -7,7 +7,6 @@ const Movie = (props) =>{
                 <img alt="movie poster" className="moviePoster" src={props.movie.poster}></img>
                 <p>{props.movie.summary}</p>
                 <p>({props.movie.rating}/10)</p>
-                <p>{props.movie.key}</p>
             </div>
         )
     }

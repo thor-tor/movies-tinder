@@ -5,50 +5,73 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color: #353535;
+  color: white;
 }
 
-.moviePoster{
-  max-height: 547px;
+p {
+  margin: 5px;
+}
+
+h2{
+  line-break: auto;
+  font-weight: 100;
+}
+
+.movieContainer {
+  display: grid;
+  justify-content: center;
+}
+
+.moviePoster {
+  max-height: 60vh;
+  max-width: 90vw;
+  /* max-height: 545px;
+    max-width: 350px; */
   height: auto;
-  width: 17%;
-  border-radius:15px;
+  width: auto;
+  border-radius: 15px;
   transition: .5s ease;
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.39);
+  margin: 10px auto;
 }
 
 
-.acceptButton:before{
-  content:"\f058 ";
+.acceptButton:before {
+  content: "\f058 ";
   font-family: 'Font Awesome\ 5 Free';
 }
 
-.rejectButton:before{
-  content:"\f057 ";
+.rejectButton:before {
+  content: "\f057 ";
   font-family: 'Font Awesome\ 5 Free';
 }
 
-.acceptButton{
-  color:white;
-  background-color: #b4c348;
+.acceptButton {
+  color: white;
+  background-color: #9bcd65;
   font-size: 20px;
-  padding:15px 25px 15px 25px;
-  border:0;
-  border-radius:30px;
-  margin:10px;
+  padding: 15px 25px 15px 25px;
+  border: 0;
+  border-radius: 30px;
+  margin: 10px;
 }
 
-.rejectButton{
-  color:white;
-  background-color: #8F2E27;
+.rejectButton {
+  color: white;
+  background-color: #e45164;
   font-size: 20px;
-  padding:15px 25px 15px 25px;
-  border:0;
-  border-radius:30px;
-  margin:10px;
+  padding: 15px 25px 15px 25px;
+  border: 0;
+  border-radius: 30px;
+  margin: 10px;
 }
 
 
-@media screen and (max-width: 992px) {
-  .moviePoster{
-    width: 65%;
+
+@media screen and (max-width: 480px) {
+  button {
+    font-size: 80% !important;
   }
 }

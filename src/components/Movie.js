@@ -4,9 +4,9 @@ const Movie = (props) =>{
         return(
             <div className="movieContainer">
                 <h2>{props.movie.title}</h2>
-                <img alt="movie poster" className="moviePoster" src={props.movie.poster}></img>
+                <img alt="movie poster" id="moviePoster" src={props.movie.poster}></img>
                 <p>{props.movie.summary}</p>
-                <p>({props.movie.rating}/10)</p>
+                <p id="movieRating">({props.movie.rating}/10)</p>
             </div>
         )
     }

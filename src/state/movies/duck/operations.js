@@ -17,3 +17,4 @@ export const getAllMovies = () => async (dispatch) => {
       key: movie.id})))
 }
 
+

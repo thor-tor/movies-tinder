@@ -1,18 +1,19 @@
 import types from './types'
 import produce from 'immer'
-import axios from 'axios'
+import low from 'lowdb'
+import LocalStorage from 'lowdb/adapters/LocalStorage'
+
+const adapter = new LocalStorage('db')
+const db = low(adapter)
 
 const INITIAL_STATE = {
   listName: 'Movies',
   list: []
 }
 
-const moviesReducer = (state = INITIAL_STATE, action) => {
+db.defaults({accepted: [], rejected: []}).write()
 
-  const params = {
-    title: "{state.list[0].title}",
-    id: "state.list[0].key",
-  }
+const moviesReducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
 
@@ -23,32 +24,38 @@ const moviesReducer = (state = INITIAL_STATE, action) => {
 
     case types.ACCEPT_MOVIE:
       return produce(state, draftState => {
-           axios.post(`http://localhost:3004/recommendations/${state.list[0].key}/accept/`, params, {
-            headers: {
-              'content-type': 'application/json',
-         },
-           })
 
-          if(state.list.length === 1){
-            return
-          }
+        db.get('accepted')
+          .push({
+            title: state.list[0].title,
+            id: state.list[0].key
+          })
+          .write()
+          console.log(db)
 
-          draftState.list.shift(action.item)
+        if (state.list.length === 1) {
+          return
+        }
+
+        draftState.list.shift(action.item)
       })
 
     case types.REJECT_MOVIE:
       return produce(state, draftState => {
-        axios.post(`http://localhost:3004/recommendations/${state.list[0].key}/reject/`, params, {
-          headers: {
-            'content-type': 'application/json',
-       },
-         })
 
-          if(state.list.length === 1){
-            return
-          }
+        db.get('rejected')
+          .push({
+            title: state.list[0].title,
+            id: state.list[0].key
+          })
+          .write()
+          console.log(db)
 
-          draftState.list.shift(action.item)
+        if (state.list.length === 1) {
+          return
+        }
+
+        draftState.list.shift(action.item)
       })
 
     default:

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllMovies } from '../duck/operations.js'
 import Movie from '../../../components/Movie'
 
-const MoviesContainer = (props) => {
+const MoviesContainer = () => {
   const movies = useSelector(state => state)
   const dispatch = useDispatch()
 
@@ -24,8 +24,6 @@ const MoviesContainer = (props) => {
     e.preventDefault()
     dispatch({ type: 'REJECT_MOVIE' })
   }
-
-
 
   return (
     <>

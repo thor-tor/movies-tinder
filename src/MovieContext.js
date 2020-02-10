@@ -18,7 +18,7 @@ const MovieContextProvider = ({children}) => {
                 movieList.splice(0,1)
             )
         })
-        console.log(updatedArray)
+        
         setMovieList(updatedArray)
     }
 

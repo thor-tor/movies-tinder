@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
-import MoviesContainer from './state/movies/containers/MoviesContainer'
+import MovieContainer from './components/MovieContainer'
 
 
 const App = () =>{
     return (
-      <>
-        <MoviesContainer />
-      </>
+      <div>
+        <MovieContainer />
+      </div>
     );
   }
 

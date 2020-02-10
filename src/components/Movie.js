@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react'
+ 
+const Movie = ({movie}) => {
 
-const Movie = (props) =>{
-        return(
-            <div className="movieContainer">
-                <h2>{props.movie.title}</h2>
-                <img alt="movie poster" id="moviePoster" src={props.movie.poster}></img>
-                <p>{props.movie.summary}</p>
-                <p id="movieRating">({props.movie.rating}/10)</p>
-            </div>
-        )
-    }
+    return(
+        <div>
+            <img alt={`${movie.title} movie poster`} className="moviePoster" src={movie.imageURL}></img>
+            <h3>{movie.title}</h3>
+            <p>{movie.rating}</p>
+            <p>{movie.summary}</p>
+        </div>
+    )
+}
+
 export default Movie

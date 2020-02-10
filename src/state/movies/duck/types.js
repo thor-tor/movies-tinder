@@ -1,9 +1,0 @@
-const ADD_MOVIE = 'ADD_MOVIE'
-const ACCEPT_MOVIE = 'ACCEPT_MOVIE'
-const REJECT_MOVIE = 'REJECT_MOVIE'
-
-export default {
-    ADD_MOVIE,
-    ACCEPT_MOVIE,
-    REJECT_MOVIE
-}

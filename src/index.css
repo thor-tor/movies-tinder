@@ -13,7 +13,7 @@ p {
   margin: 5px;
 }
 
-h2{
+h2 {
   line-break: auto;
   font-weight: 100;
 }
@@ -23,7 +23,7 @@ h2{
   justify-content: center;
 }
 
-#moviePoster {
+.moviePoster {
   max-height: 60vh;
   max-width: 90vw;
   /* max-height: 545px;
@@ -39,12 +39,12 @@ h2{
 
 
 .acceptButton:before {
-  content: "\f058 ";
+  content: "\f058  ";
   font-family: 'Font Awesome\ 5 Free';
 }
 
 .rejectButton:before {
-  content: "\f057 ";
+  content: "\f057  ";
   font-family: 'Font Awesome\ 5 Free';
 }
 

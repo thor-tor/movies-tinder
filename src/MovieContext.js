@@ -12,20 +12,14 @@ const MovieContextProvider = ({children}) => {
         .then(r => setMovieList(r))
     }, [])
 
-    const AcceptMovie = () => {
-        const updatedArray = movieList.map(movie => {
-            return(
-                movieList.splice(0,1)
-            )
-        })
-        
-        setMovieList(updatedArray)
+    const AcceptMovie = (id) => {
+        setMovieList(prevItems => prevItems.filter(item => item.id !== id))
     }
 
-    const RejectMovie = () => {
-        const updatedArray = movieList.splice(0,1)
-        setMovieList(updatedArray)
+    const RejectMovie = (id) => {
+        setMovieList(prevItems => prevItems.filter(item => item.id !== id))
     }
+
 
     return(
         <MovieContext.Provider value={{movieList, AcceptMovie, RejectMovie}}>

@@ -7,6 +7,9 @@ body {
   text-align: center;
   background-color: #353535;
   color: white;
+  height: 500px;
+  display: grid;
+  align-items: center;
 }
 
 p {
@@ -48,9 +51,20 @@ h2 {
   font-family: 'Font Awesome\ 5 Free';
 }
 
+.tryAgainButton {
+  color: white;
+  background-color: #dac937;
+  font-size: 20px;
+  padding: 15px 25px 15px 25px;
+  border: 0;
+  border-radius: 30px;
+  margin: 10px;
+  display: inline-block;
+}
+
 .acceptButton {
   color: white;
-  background-color: #9bcd65;
+  background-color: #4dbd3e;
   font-size: 20px;
   padding: 15px 25px 15px 25px;
   border: 0;
@@ -60,12 +74,17 @@ h2 {
 
 .rejectButton {
   color: white;
-  background-color: #e45164;
+  background-color: #db2a42;
   font-size: 20px;
   padding: 15px 25px 15px 25px;
   border: 0;
   border-radius: 30px;
   margin: 10px;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #999999;
 }
 
 

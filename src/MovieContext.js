@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 
 const MovieContext = React.createContext()
 
@@ -7,11 +8,19 @@ const MovieContextProvider = ({children}) => {
     const [movieList, setMovieList] = useState([])
 
 
+    // useEffect(() => {
+    //     fetch("http://localhost:3004/movies")
+    //     .then(r => r.json())
+    //     .then(r => setMovieList(r))
+    // }, [])
+
     useEffect(() => {
-        fetch("http://localhost:3004/movies")
-        .then(r => r.json())
-        .then(r => setMovieList(r))
-    }, [])
+        const fetchData = async () => {
+            const result = await axios("http://localhost:3004/movies")
+            setMovieList(result.data)
+    }
+    fetchData()
+    },[])
 
     const AcceptMovie = (id) => {
         setMovieList(prevItems => prevItems.filter(item => item.id !== id))

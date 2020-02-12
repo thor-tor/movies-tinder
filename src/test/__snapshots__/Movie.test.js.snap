@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<MovieContextProvider>
+  <Movie>
+    <div>
+      <button
+        className="acceptButton"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Accept
+      </button>
+      <button
+        className="rejectButton"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Reject
+      </button>
+      <button
+        className="tryAgainButton"
+        onClick={[Function]}
+      >
+        Try again :)
+      </button>
+    </div>
+  </Movie>
+</MovieContextProvider>
+`;

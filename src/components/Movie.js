@@ -7,7 +7,7 @@ const Movie = ({movie}) => {
 
     return(
         <div>
-            {movieList.length > 1 && <div>
+            {movieList.length > 0 && <div>
             <img alt={`${movie.title} movie poster`} className="moviePoster" src={movie.imageURL}></img>
             <h3>{movie.title}</h3>
             <p>{movie.rating}</p>

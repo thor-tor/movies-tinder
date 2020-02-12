@@ -7,13 +7,6 @@ const MovieContextProvider = ({children}) => {
 
     const [movieList, setMovieList] = useState([])
 
-
-    // useEffect(() => {
-    //     fetch("http://localhost:3004/movies")
-    //     .then(r => r.json())
-    //     .then(r => setMovieList(r))
-    // }, [])
-
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios("http://localhost:3004/movies")
@@ -22,46 +15,45 @@ const MovieContextProvider = ({children}) => {
     fetchData()
     },[])
 
-    const AcceptMovie = (id) => {
+    const AcceptMovie = (id, title, imageURL,summary,rating) => {
         setMovieList(prevItems => prevItems.filter(item => item.id !== id))
 
-        const options = {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(id),
-        }
-
-        fetch(`/recommendations/${id}/accept`,options)
-        .then((response) => response.json())
-            .then((data) => {
-            console.log('Success:', data);
-            })
-            .catch((error) => {
-            console.error('Error:', error);
-        });
+        axios.post(`/recommendations/${id}/accept`,{
+            acceptedMovies: {
+                id,
+                title,
+                imageURL,
+                summary,
+                rating
+            }
+        })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
-    const RejectMovie = (id) => {
+    const RejectMovie = (id, title, imageURL,summary,rating) => {
         setMovieList(prevItems => prevItems.filter(item => item.id !== id))
 
-        const options = {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(id),
-        }
-        
-        fetch(`/recommendations/${id}/reject`,options)
-        .then((response) => response.json())
-        .then((data) => {
-        console.log('Success:', data);
+        axios.post(`/recommendations/${id}/reject`,{
+            rejecteddMovies: {
+                id,
+                title,
+                imageURL,
+                summary,
+                rating
+            }
         })
-        .catch((error) => {
-        console.error('Error:', error);
-        });
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
     }
 
 

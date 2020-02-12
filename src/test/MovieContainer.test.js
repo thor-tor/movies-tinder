@@ -22,5 +22,5 @@ test("matches snapshot", () => {
         <MovieContextProvider>
     <MovieContainer />
     </MovieContextProvider>)
-    expect(toJSON(wrapper).toMatchSnapshot())
+    expect(toJSON(wrapper)).toMatchSnapshot();
 })

@@ -33,6 +33,9 @@ const MovieContextProvider = ({children}) => {
           .catch(function (error) {
             console.log(error);
           });
+
+          console.log(movieList.length)
+          console.log(movieList)
     }
 
     const RejectMovie = (id, title, imageURL,summary,rating) => {
@@ -54,6 +57,8 @@ const MovieContextProvider = ({children}) => {
             console.log(error);
           });
 
+          console.log(movieList.length)
+          console.log(movieList)
     }
 
 
